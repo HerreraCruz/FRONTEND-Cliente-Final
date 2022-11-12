@@ -1,6 +1,6 @@
 body {
    background-color: #F1EB55;
-   background-image: url(/assets/img/1.png);
+   /*background-image: url(/assets/img/1.png);*/
    background-repeat: no-repeat;
    background-size: 400px;
    background-position-y: 150px;
@@ -11,18 +11,19 @@ body {
 #titulo {
    text-align: center;
    padding-top: 50px;
+   font-size: 2.5rem;
    font-family: 'Fredoka One', cursive;
    /*font-family: 'Roboto', sans-serif*/
    color: #4C33E7;
 }
 
-/*#imagen {
-   padding-top: 100px;
+#imagen {
+   padding-top: 30px;
    width: 100%;
-}*/
+}
 
 #login-signup {
-   padding-top: 500px;
+   padding-top: 50px;
    display: flex;
    flex-direction: column;
    flex-wrap: nowrap;
