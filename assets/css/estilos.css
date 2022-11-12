@@ -1,0 +1,45 @@
+body {
+   background-color: #F1EB55;
+   background-image: url(/assets/img/1.png);
+   background-repeat: no-repeat;
+   background-size: 400px;
+   background-position-y: 150px;
+   background-position-x: center;
+   font-family: 'Fredoka One', cursive;
+}
+
+#titulo {
+   text-align: center;
+   padding-top: 50px;
+   font-family: 'Fredoka One', cursive;
+   /*font-family: 'Roboto', sans-serif*/
+   color: #4C33E7;
+}
+
+/*#imagen {
+   padding-top: 100px;
+   width: 100%;
+}*/
+
+#login-signup {
+   padding-top: 500px;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   justify-content: flex-start;
+   align-items: center;
+   align-content: stretch;
+   
+   
+}
+
+#login {
+   background-color: #19DC15;
+   width: 250px;
+   height: 70px;
+   border-radius: 2rem;
+   font-size: 2rem;
+   color: #4C33E7;
+
+}
+
