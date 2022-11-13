@@ -77,3 +77,40 @@ body {
    color: #4C33E7;
    font-family: 'Fredoka One', cursive;
 }
+
+.modal-body {
+   font-size: 1.5rem;
+   color: #4C33E7;
+   font-family: 'Fredoka One', cursive;
+   display: flex;
+   flex-direction:column;
+   flex-wrap: nowrap;
+   justify-content: flex-start;
+   align-items: baseline;
+   align-content: center;
+}
+
+.btn-secondary {
+   font-size: 1.5rem;
+   color: #4C33E7;
+   font-family: 'Fredoka One', cursive;
+   background-color: #19DC15;
+}
+
+.modal-content {
+      background-color: #19DC15;
+}
+
+#categorias {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-template-rows: repeat(5, 1fr);
+   grid-column-gap: 20px;
+   grid-row-gap: 20px;
+}
+
+#rubro { 
+   font-size: 1.5rem;
+   color: #4C33E7;
+   font-family: 'Fredoka One', cursive;
+}
