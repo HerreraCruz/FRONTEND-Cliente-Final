@@ -1,0 +1,143 @@
+body {
+   background-color: #F1EB55;
+   /*background-image: url(/assets/img/1.png);*/
+   background-repeat: no-repeat;
+   background-size: 400px;
+   background-position-y: 150px;
+   background-position-x: center;
+   font-family: 'Fredoka One', cursive;
+}
+
+#titulo {
+   text-align: center;
+   padding-top: 50px;
+   padding-bottom: 20px;
+   font-size: 2.5rem;
+   font-family: 'Fredoka One', cursive;
+   /*font-family: 'Roboto', sans-serif*/
+   color: #4C33E7;
+}
+
+#imagen {
+   padding-top: 30px;
+   width: 100%;
+}
+
+#login-signup {
+   padding-top: 50px;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   justify-content: flex-start;
+   align-items: center;
+   align-content: stretch;
+   
+   
+}
+
+#login {
+   background-color: #19DC15;
+   width: 250px;
+   height: 70px;
+   border-radius: 2rem;
+   font-size: 2rem;
+   color: #4C33E7;
+
+}
+
+#personas {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+   align-content: center;
+}
+
+#titulo2 {
+   margin-top: 25px;
+   margin-bottom: 25px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+   align-content: center;
+   box-shadow: inset 0 0 10px #281e0b;
+   background-color: #19DC15;
+   width: auto;
+   height: 70px;
+   border-radius: 2rem;
+   font-size: 1.5rem;
+   color: #4C33E7;
+}
+
+#titulo3 {
+   margin-top: 25px;
+   margin-bottom: 25px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+   box-shadow: inset 0 0 10px #281e0b;
+   background-color: #19DC15;
+   width: 70%;
+   height: 70px;
+   border-radius: 2rem;
+   font-size: 1.5rem;
+   color: #4C33E7;
+}
+
+#exampleModalLabel {
+   font-size: 1.5rem;
+   color: #4C33E7;
+   font-family: 'Fredoka One', cursive;
+}
+
+.modal-body {
+   font-size: 1.5rem;
+   color: #4C33E7;
+   font-family: 'Fredoka One', cursive;
+   display: flex;
+   flex-direction:column;
+   flex-wrap: nowrap;
+   justify-content: flex-start;
+   align-items: baseline;
+   align-content: center;
+}
+
+.btn-secondary {
+   font-size: 1.5rem;
+   color: #4C33E7;
+   font-family: 'Fredoka One', cursive;
+   background-color: #19DC15;
+}
+
+.modal-content {
+      background-color: #19DC15;
+}
+
+#categorias {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-template-rows: repeat(5, 1fr);
+   grid-column-gap: 20px;
+   grid-row-gap: 20px;
+}
+
+#rubro { 
+   font-size: 1.5rem;
+   color: #4C33E7;
+   font-family: 'Fredoka One', cursive;
+}
+
+#compra {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+}
