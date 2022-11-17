@@ -911,21 +911,26 @@ function login() {
     document.getElementById('facetas').innerHTML =
     `<div><img src="assets/img/1.png" alt="" id="imagen"></div>
     <div id="login-signup">
-        <button id="login" onclick="generarUsuarios(0)">LOGIN</button>
+        <button id="login" onclick="generarUsuarios()">LOGIN</button>
         <hr>
         <div style="color: #4C33E7; font-size: 2.0rem;">REGISTRARSE</div>
     </div>`
 }
 
 
-function generarUsuarios(opcion) {
-    if (opcion==0) {
+function generarUsuarios() {
         /*document.getElementById('facetas').innerHTML =
         `<h1>hola</h1>`;*/
         let i=1;
-        document.getElementById('facetas').innerHTML = null;
-        document.getElementById('facetas').id='personas';
-        document.getElementById('titulo').id='titulo2';
+        /*if (document.getElementsByClassName('origen1')[0].id=='facetas') {
+            document.getElementById('facetas').innerHTML = null;
+            document.getElementById('facetas').id='personas';
+        } else {document.getElementsByClassName('origen1')[0].innerHTML=null}
+        document.getElementsByClassName('origen1')[0].id='personas'
+        //document.getElementById('titulo').id='titulo2';*/
+        document.getElementsByClassName('origen1')[0].id='personas'
+        document.getElementById('personas').innerHTML=null;
+        document.getElementsByClassName('origen0')[0].id='titulo2'
         document.getElementById('titulo2').innerHTML = 
         `<div><i class="fa-solid fa-angle-left" onclick="login()"></i></div>
          <div>aunClick-USUARIOS</div>
@@ -941,7 +946,6 @@ function generarUsuarios(opcion) {
             </button>`;
            i++;
            });  
-    }
 }
 
 
@@ -970,14 +974,19 @@ function menu() {
     </div>`;
 }
 
-function generarCategorias(iden) {
+function generarCategorias(a) {
     //if(JSON.parse(localstorage.getItem('categorias'))[0].preguntas[0].id==iden) {console.log('func', JSON.parse(localstorage.getItem('categorias'))[0].preguntas[0].id);}
-    document.getElementById('personas').innerHTML=null;
-    document.getElementById('personas').id='categoria';
+    document.getElementsByClassName('origen1')[0].id='categoria'
+    //document.getElementById('personas').id='categoria';
+    document.getElementById('categoria').innerHTML=null;
+    document.getElementById('titulo2').innerHTML = 
+        `<div><i class="fa-solid fa-angle-left" onclick="generarUsuarios()"></i></div>
+         <div>aunClick-CATEGORIAS</div>
+         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
     let i=1;
     JSON.parse(localStorage.getItem('categorias')).forEach(function(rubro){
         document.getElementById('categoria').innerHTML +=
-           `<button class="btn col-6" id="botonSelect" onclick="generarRestaurantes(${i})">
+           `<button class="btn col-6" id="botonSelect" onclick="generarRestaurantes(${a}, ${i})">
                 <img src="${rubro.icono}" style="border-radius: 15%; width:140px; height:115px;">
                 <div id="rubro">${rubro.nombre}
                 </div>
@@ -986,15 +995,19 @@ function generarCategorias(iden) {
        }); 
 }
 
-function generarRestaurantes(iden) {
-    console.log('iden', iden);
+function generarRestaurantes(a,b) {
+    console.log('b', b);
     document.getElementById('categoria').innerHTML=null;
     let i=1;
     //document.getElementById('personas').id='categoria';
-    JSON.parse(localStorage.getItem('categorias'))[iden-1].preguntas.forEach(function(ques){
+    document.getElementById('titulo2').innerHTML = 
+        `<div><i class="fa-solid fa-angle-left" onclick="generarCategorias(${a})"></i></div>
+         <div>aunClick-RESTAURANTES</div>
+         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
+    JSON.parse(localStorage.getItem('categorias'))[b-1].preguntas.forEach(function(ques){
         
             document.getElementById('categoria').innerHTML +=
-            `<button class="btn col-6" id="botonSelect" onclick="generarProductos(${iden}, ${i})">
+            `<button class="btn col-6" id="botonSelect" onclick="generarProductos(${a}, ${b}, ${i})">
                  <img src="${ques.logo}" style="border-radius: 15%; width:130px; height:130px;">
                  <div id="rubro">${ques.palabra}
                  </div>
@@ -1003,14 +1016,18 @@ function generarRestaurantes(iden) {
        }); 
 }
 
-function generarProductos(a,b) {
+function generarProductos(a,b,c) {
     document.getElementById('categoria').innerHTML=null;
     //document.getElementById('personas').id='categoria';
     let i=1;
-    JSON.parse(localStorage.getItem('categorias'))[a-1].preguntas[b-1].productos.forEach(function(pro){
+    document.getElementById('titulo2').innerHTML = 
+        `<div><i class="fa-solid fa-angle-left" onclick="generarRestaurantes(${a},${b})"></i></div>
+         <div>aunClick-PROD/SERV</div>
+         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
+    JSON.parse(localStorage.getItem('categorias'))[b-1].preguntas[c-1].productos.forEach(function(pro){
         
             document.getElementById('categoria').innerHTML +=
-            `<button class="btn col-6" id="botonSelect" onclick="compraProducto(${a},${b},${i})">
+            `<button class="btn col-6" id="botonSelect" onclick="compraProducto(${a},${b},${c},${i})">
                  <img src="${pro.imagen}" style="border-radius: 15%; width:130px; height:130px;">
                  <div id="rubro">${pro.nombre}
                  </div>
@@ -1020,18 +1037,22 @@ function generarProductos(a,b) {
        }); 
 }
 
-function compraProducto(a,b,c) {
+function compraProducto(a,b,c,d) {
     document.getElementById('categoria').innerHTML=null;
     //document.getElementById('personas').id='categoria';
-        document.getElementById('categoria').innerHTML =
+    document.getElementById('titulo2').innerHTML = 
+        `<div><i class="fa-solid fa-angle-left" onclick="generarProductos(${a},${b},${c})"></i></div>
+         <div>aunClick-COMPRA</div>
+         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
+    document.getElementById('categoria').innerHTML =
         `<div id="compra"><img src="assets/img/productos/bigos/bigos.jpg" style="border-radius: 15%; width:350px;">
         <br><br><br>
         <button class="btn col-6" id="botonSelect">
-                <img src="${JSON.parse(localStorage.getItem('categorias'))[a-1].preguntas[b-1].productos[c-1].imagen}" style="border-radius: 15%; width:150px; height:150px;">
-                <div id="rubro">${JSON.parse(localStorage.getItem('categorias'))[a-1].preguntas[b-1].productos[c-1].nombre}
+                <img src="${JSON.parse(localStorage.getItem('categorias'))[b-1].preguntas[c-1].productos[d-1].imagen}" style="border-radius: 15%; width:150px; height:150px;">
+                <div id="rubro">${JSON.parse(localStorage.getItem('categorias'))[b-1].preguntas[c-1].productos[d-1].nombre}
                 </div>      
         </button>
-        <br><div id="rubro" style="font-size:2rem;">L ${JSON.parse(localStorage.getItem('categorias'))[a-1].preguntas[b-1].productos[c-1].precio}.00</div><br>
+        <br><div id="rubro" style="font-size:2rem;">L ${JSON.parse(localStorage.getItem('categorias'))[b-1].preguntas[c-1].productos[d-1].precio}.00</div><br>
         
         <div style="font-size:2rem; width:100%; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-evenly; align-items: center; align-content: center;" id="rubro"><div><i class="fa-solid fa-circle-plus"></i></div><div>cantidad</div><div><i class="fa-solid fa-circle-minus"></i></div></div>
         <div id="titulo3">AGREGAR A ORDEN</div>
