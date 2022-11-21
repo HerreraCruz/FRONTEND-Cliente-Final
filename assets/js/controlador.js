@@ -3,9 +3,10 @@ var usuarios = [
         id: 1,
         nombre: "Goku",
         imagenPerfil: "assets/img/profile-pics/goku.jpg",
-        coronas: 2,
-        vidas: 5,
-        resultados: [
+        correo: 'goku@unah.hn',
+        direccion: 'boulevard suyapa',
+        numero: 99887766,
+        pedidos: [
             {
                 category: 1,
                 correctas: 4,
@@ -30,9 +31,10 @@ var usuarios = [
         id: 2,
         nombre: "videl",
         imagenPerfil: "assets/img/profile-pics/videl.jpg",
-        coronas: 2,
-        vidas: 5,
-        resultados: [
+        correo: 'videl@unah.hn',
+        direccion: 'boulevard suyapa',
+        numero: 99887766,
+        pedidos: [
             {
                 category: 1,
                 correctas: 4,
@@ -57,9 +59,10 @@ var usuarios = [
         id: 3,
         nombre: "freezer",
         imagenPerfil: "assets/img/profile-pics/freezer.jpg",
-        coronas: 2,
-        vidas: 5,
-        resultados: [
+        correo: 'freezer@unah.hn',
+        direccion: 'boulevard suyapa',
+        numero: 99887766,
+        pedidos: [
             {
                 category: 1,
                 correctas: 4,
@@ -82,11 +85,12 @@ var usuarios = [
     },
     {
         id: 4,
-        nombre: "Gohan",
+        nombre: "gohan",
         imagenPerfil: "assets/img/profile-pics/gohan.jpg",
-        coronas: 2,
-        vidas: 5,
-        resultados: [
+        correo: 'gohan@unah.hn',
+        direccion: 'boulevard suyapa',
+        numero: 99887766,
+        pedidos: [
             {
                 category: 1,
                 correctas: 4,
@@ -115,33 +119,39 @@ var categorias = [
         nombre: "COMIDA",
         icono: "assets/img/categorias/1.jpg",
         color: "#F27B7B",
-        preguntas: [
+        socios: [
             {
             id: 1,
             palabra: "BIGOS",
             logo: "assets/img/restaurantes/R1.jpg",
             productos: [
                 {
+                    id: 1,
                     nombre: "HAMBURGUESA GIGANTE",
                     precio: 139,
                     imagen: 'assets/img/productos/bigos/B1.jpg',
                 },{
+                    id: 2,
                     nombre: "BURRITOS DE POLLO",
                     precio: 78,
                     imagen: 'assets/img/productos/bigos/B2.jpg',
                 },{
+                    id: 3,
                     nombre: "SANWITCH CUBANO",
                     precio: 184,
                     imagen: 'assets/img/productos/bigos/B3.jpg',
                 },{
+                    id: 4,
                     nombre: "HAMBURGUESA KRISPY",
                     precio: 109,
                     imagen: 'assets/img/productos/bigos/B4.jpg',
                 },{
+                    id: 5,
                     nombre: "HAMBURGUESA JALAPEÑA",
                     precio: 128,
                     imagen: 'assets/img/productos/bigos/B5.jpg',
                 },{
+                    id: 6,
                     nombre: "SANDWICH TEJANO",
                     precio: 199,
                     imagen: 'assets/img/productos/bigos/B6.jpg',
@@ -325,32 +335,74 @@ var categorias = [
         nombre: "BEBIDA",
         icono: "assets/img/categorias/2.jpg",
         color: "#F27B7B",
-        preguntas: [
+        socios: [
             {
-            id: 1,
-            palabra: "Hermana",
-            logo: "assets/img/restaurantes/",
-            productos: [
-                {
-                    palabra: "Brother",
-                    correcta: false,
-                },{
-                    palabra: "Mother",
-                    correcta: false,
-                },{
-                    palabra: "water",
-                    correcta: false,
-                },{
-                    palabra: "Sister",
-                    correcta: true,
-                },
-            ]
-
+                id: 1,
+                palabra: "ITSMANIA",
+                logo: "assets/img/restaurantes/B1.png",
+                productos: [
+                    {
+                        palabra: "Family",
+                        correcta: true,
+                    },{
+                        palabra: "Mother",
+                        correcta: false,
+                    },{
+                        palabra: "water",
+                        correcta: false,
+                    },{
+                        palabra: "Java",
+                        correcta: false,
+                    }
+                ]
+        
             },
             {
-                id: 2,
-                palabra: "Familia",
-                logo: "assets/img/restaurantes/",
+                id: 3,
+                palabra: "GALEANO",
+                logo: "assets/img/restaurantes/B2.jfif",
+                productos: [
+                    {
+                        palabra: "Family",
+                        correcta: true,
+                    },{
+                        palabra: "Mother",
+                        correcta: false,
+                    },{
+                        palabra: "water",
+                        correcta: false,
+                    },{
+                        palabra: "Java",
+                        correcta: false,
+                    }
+                ]
+        
+            },
+            {
+                id: 3,
+                palabra: "CIRCLE K",
+                logo: "assets/img/restaurantes/B3.png",
+                productos: [
+                    {
+                        palabra: "Family",
+                        correcta: true,
+                    },{
+                        palabra: "Mother",
+                        correcta: false,
+                    },{
+                        palabra: "water",
+                        correcta: false,
+                    },{
+                        palabra: "Java",
+                        correcta: false,
+                    }
+                ]
+        
+            },
+            {
+                id: 3,
+                palabra: "CASA DEL RON",
+                logo: "assets/img/restaurantes/B4.jpg",
                 productos: [
                     {
                         palabra: "Family",
@@ -376,7 +428,7 @@ var categorias = [
         nombre: "REPOSTERÍA",
         icono: "assets/img/categorias/3.jpg",
         color: "#F27B7B",
-        preguntas: [
+        socios: [
             {
             id: 1,
             palabra: "Hermana",
@@ -427,7 +479,7 @@ var categorias = [
         nombre: "CAFÉ Y TÉ",
         icono: "assets/img/categorias/4.jpg",
         color: "#F27B7B",
-        preguntas: [
+        socios: [
             {
             id: 1,
             palabra: "Hermana",
@@ -478,7 +530,7 @@ var categorias = [
         nombre: "PAQUETERÍA",
         icono: "assets/img/categorias/5.webp",
         color: "#F27B7B",
-        preguntas: [
+        socios: [
             {
             id: 1,
             palabra: "Hermana",
@@ -529,7 +581,7 @@ var categorias = [
         nombre: "ABARROTERÍA",
         icono: "assets/img/categorias/6.webp",
         color: "#F27B7B",
-        preguntas: [
+        socios: [
             {
             id: 1,
             palabra: "Hermana",
@@ -580,7 +632,7 @@ var categorias = [
         nombre: "GIFTS",
         icono: "assets/img/categorias/7.webp",
         color: "#F27B7B",
-        preguntas: [
+        socios: [
             {
             id: 1,
             palabra: "Hermana",
@@ -631,7 +683,7 @@ var categorias = [
         nombre: "FARMACIA",
         icono: "assets/img/categorias/8.webp",
         color: "#F27B7B",
-        preguntas: [
+        socios: [
             {
             id: 1,
             palabra: "Hermana",
@@ -682,7 +734,7 @@ var categorias = [
         nombre: "FERRETERÍA",
         icono: "assets/img/categorias/9.webp",
         color: "#F27B7B",
-        preguntas: [
+        socios: [
             {
             id: 1,
             palabra: "Hermana",
@@ -733,7 +785,7 @@ var categorias = [
         nombre: "PAPELERÍA",
         icono: "assets/img/categorias/10.jfif",
         color: "#F27B7B",
-        preguntas: [
+        socios: [
             {
             id: 1,
             palabra: "Hermana",
@@ -784,7 +836,7 @@ var categorias = [
         nombre: "TECNOLOGÍA",
         icono: "assets/img/categorias/11.webp",
         color: "#F27B7B",
-        preguntas: [
+        socios: [
             {
             id: 1,
             palabra: "Hermana",
@@ -835,7 +887,7 @@ var categorias = [
         nombre: "DEPORTE",
         icono: "assets/img/categorias/12.jpg",
         color: "#F27B7B",
-        preguntas: [
+        socios: [
             {
             id: 1,
             palabra: "Hermana",
@@ -887,7 +939,7 @@ var categorias = [
 
 //console.log('Usuarios', usuarios);
 
-console.log('ver',categorias[0].preguntas);
+console.log('ver',categorias[0].socios);
 
 
 var localstorage = window.localStorage;
@@ -899,49 +951,47 @@ if(localStorage.getItem('usuarios')== null) {
 if(localStorage.getItem('categorias')== null) {
     localStorage.setItem('categorias', JSON.stringify(categorias));
 }
-console.log('a', JSON.parse(localstorage.getItem('categorias'))[0].preguntas);
-console.log('b', JSON.parse(localstorage.getItem('categorias'))[0].preguntas[0].id);
+console.log('a', JSON.parse(localstorage.getItem('categorias'))[0].socios);
+console.log('b', JSON.parse(localstorage.getItem('categorias'))[0].socios[0].id);
 
 function login() {
     if (document.getElementsByClassName('origen0')[0].id!='titulo') {
         document.getElementsByClassName('origen0')[0].id='titulo';
         document.getElementsByClassName('origen1')[0].id='facetas';
-    }
+    };
     document.getElementById('titulo').innerHTML= `<div>aunClick</div>`
     document.getElementById('facetas').innerHTML =
-    `<div><img src="assets/img/1.png" alt="" id="imagen"></div>
-    <div id="login-signup">
-        <button id="login" onclick="generarUsuarios(0)">LOGIN</button>
-        <hr>
-        <div style="color: #4C33E7; font-size: 2.0rem;">REGISTRARSE</div>
-    </div>`
+        `<div><img src="assets/img/1.png" alt="" id="imagen"></div>
+        <div id="login-signup">
+            <button id="login" onclick="generarUsuarios()">
+                LOGIN
+            </button>
+            <hr>
+            <div style="color: #4C33E7; font-size: 2.0rem;" onclick="registrarse()">
+                REGISTRARSE
+            </div>
+        </div>`;
 }
 
 
-function generarUsuarios(opcion) {
-    if (opcion==0) {
-        /*document.getElementById('facetas').innerHTML =
-        `<h1>hola</h1>`;*/
-        let i=1;
-        document.getElementById('facetas').innerHTML = null;
-        document.getElementById('facetas').id='personas';
-        document.getElementById('titulo').id='titulo2';
+function generarUsuarios() {
+        document.getElementsByClassName('origen1')[0].id='personas'
+        document.getElementById('personas').innerHTML=null;
+        document.getElementsByClassName('origen0')[0].id='titulo2'
         document.getElementById('titulo2').innerHTML = 
-        `<div><i class="fa-solid fa-angle-left" onclick="login()"></i></div>
-         <div>aunClick-USUARIOS</div>
-         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`
+            `<div><i class="fa-solid fa-angle-left" onclick="login()"></i></div>
+            <div>aunClick-USUARIOS</div>
+            <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`
         JSON.parse(localStorage.getItem('usuarios')).forEach(function(foto) {
-            console.log("i", i);
+            console.log("i", foto.id);
             document.getElementById('personas').innerHTML +=
-            `<button class="btn" style="border-radius: 15%;" onclick="generarCategorias(${i}); console.log('id', ${i});">
-                <img src="${foto.imagenPerfil}" id="otraFoto" style="border-radius: 15%;">
-                <div id="rubro">${foto.nombre}
-                        
-                </div>
-            </button>`;
-           i++;
+                `<button class="btn" style="border-radius: 15%;" onclick="generarCategorias(${foto.id}); console.log('id', ${foto.id});">
+                    <img src="${foto.imagenPerfil}" id="otraFoto" style="border-radius: 15%;">
+                    <div id="rubro">
+                        ${foto.nombre}    
+                    </div>
+                </button>`;
            });  
-    }
 }
 
 
@@ -970,72 +1020,114 @@ function menu() {
     </div>`;
 }
 
-function generarCategorias(iden) {
-    //if(JSON.parse(localstorage.getItem('categorias'))[0].preguntas[0].id==iden) {console.log('func', JSON.parse(localstorage.getItem('categorias'))[0].preguntas[0].id);}
-    document.getElementById('personas').innerHTML=null;
-    document.getElementById('personas').id='categoria';
-    let i=1;
+function generarCategorias(a) {
+    //if(JSON.parse(localstorage.getItem('categorias'))[0].socios[0].id==iden) {console.log('func', JSON.parse(localstorage.getItem('categorias'))[0].socios[0].id);}
+    document.getElementsByClassName('origen1')[0].id='categoria'
+    document.getElementById('categoria').innerHTML=null;
+    document.getElementById('titulo2').innerHTML = 
+        `<div><i class="fa-solid fa-angle-left" onclick="generarUsuarios()"></i></div>
+         <div>aunClick-CATEGORIAS</div>
+         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
     JSON.parse(localStorage.getItem('categorias')).forEach(function(rubro){
         document.getElementById('categoria').innerHTML +=
-           `<button class="btn col-6" id="botonSelect" onclick="generarRestaurantes(${i})">
+           `<button class="btn col-6" id="botonSelect" onclick="generarRestaurantes(${a}, ${rubro.id})">
                 <img src="${rubro.icono}" style="border-radius: 15%; width:140px; height:115px;">
                 <div id="rubro">${rubro.nombre}
                 </div>
             </button>`;
-            i++;
        }); 
 }
 
-function generarRestaurantes(iden) {
-    console.log('iden', iden);
+function generarRestaurantes(a,b) {
+    console.log('b', b);
     document.getElementById('categoria').innerHTML=null;
-    let i=1;
-    //document.getElementById('personas').id='categoria';
-    JSON.parse(localStorage.getItem('categorias'))[iden-1].preguntas.forEach(function(ques){
+    document.getElementById('titulo2').innerHTML = 
+        `<div><i class="fa-solid fa-angle-left" onclick="generarCategorias(${a})"></i></div>
+         <div>aunClick-RESTAURANTES</div>
+         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
+    JSON.parse(localStorage.getItem('categorias'))[b-1].socios.forEach(function(ques){
         
             document.getElementById('categoria').innerHTML +=
-            `<button class="btn col-6" id="botonSelect" onclick="generarProductos(${iden}, ${i})">
+            `<button class="btn col-6" id="botonSelect" onclick="generarProductos(${a}, ${b}, ${ques.id})">
                  <img src="${ques.logo}" style="border-radius: 15%; width:130px; height:130px;">
                  <div id="rubro">${ques.palabra}
                  </div>
              </button>`;
-            i++;
        }); 
 }
 
-function generarProductos(a,b) {
+function generarProductos(a,b,c) {
     document.getElementById('categoria').innerHTML=null;
     //document.getElementById('personas').id='categoria';
-    let i=1;
-    JSON.parse(localStorage.getItem('categorias'))[a-1].preguntas[b-1].productos.forEach(function(pro){
+    document.getElementById('titulo2').innerHTML = 
+        `<div><i class="fa-solid fa-angle-left" onclick="generarRestaurantes(${a},${b})"></i></div>
+         <div>aunClick-PROD/SERV</div>
+         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
+    JSON.parse(localStorage.getItem('categorias'))[b-1].socios[c-1].productos.forEach(function(pro){
         
             document.getElementById('categoria').innerHTML +=
-            `<button class="btn col-6" id="botonSelect" onclick="compraProducto(${a},${b},${i})">
+            `<button class="btn col-6" id="botonSelect" onclick="compraProducto(${a},${b},${c},${pro.id})">
                  <img src="${pro.imagen}" style="border-radius: 15%; width:130px; height:130px;">
                  <div id="rubro">${pro.nombre}
                  </div>
              </button>`;
-
-        i++;
        }); 
 }
 
-function compraProducto(a,b,c) {
+function compraProducto(a,b,c,d) {
     document.getElementById('categoria').innerHTML=null;
-    //document.getElementById('personas').id='categoria';
-        document.getElementById('categoria').innerHTML =
+    document.getElementById('titulo2').innerHTML = 
+        `<div><i class="fa-solid fa-angle-left" onclick="generarProductos(${a},${b},${c})"></i></div>
+         <div>aunClick-COMPRA</div>
+         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
+    document.getElementById('categoria').innerHTML =
         `<div id="compra"><img src="assets/img/productos/bigos/bigos.jpg" style="border-radius: 15%; width:350px;">
         <br><br><br>
         <button class="btn col-6" id="botonSelect">
-                <img src="${JSON.parse(localStorage.getItem('categorias'))[a-1].preguntas[b-1].productos[c-1].imagen}" style="border-radius: 15%; width:150px; height:150px;">
-                <div id="rubro">${JSON.parse(localStorage.getItem('categorias'))[a-1].preguntas[b-1].productos[c-1].nombre}
+                <img src="${JSON.parse(localStorage.getItem('categorias'))[b-1].socios[c-1].productos[d-1].imagen}" style="border-radius: 15%; width:150px; height:150px;">
+                <div id="rubro">${JSON.parse(localStorage.getItem('categorias'))[b-1].socios[c-1].productos[d-1].nombre}
                 </div>      
         </button>
-        <br><div id="rubro" style="font-size:2rem;">L ${JSON.parse(localStorage.getItem('categorias'))[a-1].preguntas[b-1].productos[c-1].precio}.00</div><br>
+        <br><div id="rubro" style="font-size:2rem;">L ${JSON.parse(localStorage.getItem('categorias'))[b-1].socios[c-1].productos[d-1].precio}.00</div><br>
         
         <div style="font-size:2rem; width:100%; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-evenly; align-items: center; align-content: center;" id="rubro"><div><i class="fa-solid fa-circle-plus"></i></div><div>cantidad</div><div><i class="fa-solid fa-circle-minus"></i></div></div>
         <div id="titulo3">AGREGAR A ORDEN</div>
         </div>`;
 }
 
+function registrarse() {
+    
+    document.getElementById('titulo').innerHTML= `<div>Registrarse</div>`
+    document.getElementById('facetas').innerHTML =
+        `<div class="container">
+            <div id="registro">
+            
+                    <input class="form-control" type="number" id="" placeholder="Nombre de Usuario" min="0" max="10">
+                    <input class="form-control" type="text" id="" placeholder="Correo Electrónico">
+                    <input class="form-control" type="text" id="" placeholder="Contraseña">
 
+        
+            </div>
+         </div>
+        <div id="login-signup">
+            <button id="login" onclick="generarUsuarios()">
+                SIGN UP
+            </button>
+            <hr>
+        </div>`;
+
+        
+}
+
+function guardar() {
+    const user =  {
+                
+        id: localstorage.getItem('usuarios').length + 1,
+        nombre: document.getElementById('').value,
+        imagenPerfil: `assets/img/profile-pics/${document.getElementById('').value}`,
+        correo: document.getElementById('').value,
+        direccion: document.getElementById('').value,
+        numero: document.getElementById('').value,
+        pedidos: [],
+    }
+}
