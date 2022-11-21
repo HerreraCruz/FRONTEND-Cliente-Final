@@ -141,3 +141,17 @@ body {
    align-items: center;
    align-content: center;
 }
+
+#registro {
+   color: #4C33E7;
+   font-size: 1.5rem;
+   padding-top: 50px;
+   padding-bottom: 125px;
+   height: 400px;
+   display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: stretch;
+	align-content: center;
+}
