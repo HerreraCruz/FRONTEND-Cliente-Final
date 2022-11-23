@@ -941,17 +941,24 @@ var categorias = [
 
 var pedidosPendientes =[
     {
-        id: 0,
-        category: 0,
-        socios: 0,
-        productos: 0,
-        unidades: 0,
+    id: 0,
+    categoria: 0,
+    socios: 0,
+    productos: 0,
+    unidades: 5,
+    },
+    {
+    id: 0,
+    categoria: 0,
+    socios: 0,
+    productos: 0,
+    unidades: 2,
     }
 ]
 
 
 //console.log('Usuarios', usuarios);
-
+console.log(pedidosPendientes[0].unidades);
 console.log('ver',categorias[0].socios);
 console.log('ver',categorias.length);
 console.log('ver',usuarios.length);
@@ -998,24 +1005,32 @@ function generarUsuarios() {
         document.getElementsByClassName('origen0')[0].id='titulo2'
         document.getElementById('titulo2').innerHTML = 
             `<div><i class="fa-solid fa-angle-left" onclick="login()"></i></div>
-            <div>aunClick-USUARIOS</div>
+            <div>aunClick-Usuarios</div>
             <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`
-        JSON.parse(localStorage.getItem('usuarios')).forEach(function(foto) {
-            console.log("i", foto.id);
+        JSON.parse(localStorage.getItem('usuarios')).forEach(function(personaje) {
+            console.log("i", personaje.id);
             document.getElementById('personas').innerHTML +=
-                `<button class="btn" style="border-radius: 15%;" onclick="generarCategorias(${foto.id}); console.log('id', ${foto.id});">
-                    <img src="${foto.imagenPerfil}" id="otraFoto" style="border-radius: 15%;">
+                `<button class="btn" style="border-radius: 15%;" onclick="generarCategorias(${personaje.id}); console.log('id', ${personaje.id});">
+                    <img src="${personaje.imagenPerfil}" id="otraFoto" style="border-radius: 15%;">
                     <div id="rubro">
-                        ${foto.nombre}    
+                        ${personaje.nombre}    
                     </div>
                 </button>`;
            });  
 }
 
 
-function menu() {
-    document.getElementsByClassName("fa-solid fa-angle-left")[0].innerHTML=
-    `<!-- Modal -->
+function menu(a) {
+    console.log('a', a);
+    if (unit==null) { unit=0;};
+    document.getElementsByClassName("modal-body")[0].innerHTML=
+    `<div onclick="perfil(${a})" data-bs-dismiss="modal"><i class="fa-regular fa-circle-user"></i> PERFIL</div>
+            <div><i class="fa-solid fa-cart-shopping"></i> CARRITO (${  unit})</div>
+            <div><i class="fa-regular fa-comment-dots"></i> MENSAJES</div>
+            <div><i class="fa-regular fa-bell"></i> NOTIFICACIONES</div>
+            <div onclick="login()" data-bs-dismiss="modal"><i class="fa-solid fa-right-from-bracket"></i> SALIR</div>`}
+    /*document.getElementsByClassName("fa-solid fa-angle-left")[0].innerHTML=
+    `<div data-bs-toggle="modal" data-bs-target="#exampleModal"></div><!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -1024,8 +1039,8 @@ function menu() {
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <div><i class="fa-regular fa-circle-user"></i> PERFIL</div>
-            <div><i class="fa-solid fa-cart-shopping"></i> COMPRAS</div>
+            <div onclick="perfil(${a})" data-bs-dismiss="modal"><i class="fa-regular fa-circle-user"></i> PERFIL</div>
+            <div><i class="fa-solid fa-cart-shopping"></i> CARRITO (${  unit})</div>
             <div><i class="fa-regular fa-comment-dots"></i> MENSAJES</div>
             <div><i class="fa-regular fa-bell"></i> NOTIFICACIONES</div>
             <div onclick="login()" data-bs-dismiss="modal"><i class="fa-solid fa-right-from-bracket"></i> SALIR</div>
@@ -1036,19 +1051,20 @@ function menu() {
         </div>
     </div>
     </div>`;
-}
+}*/
 
 function generarCategorias(a) {
+    console.log('a', a);
     //if(JSON.parse(localstorage.getItem('categorias'))[0].socios[0].id==iden) {console.log('func', JSON.parse(localstorage.getItem('categorias'))[0].socios[0].id);}
     document.getElementsByClassName('origen1')[0].id='categoria'
     document.getElementById('categoria').innerHTML=null;
     document.getElementById('titulo2').innerHTML = 
         `<div><i class="fa-solid fa-angle-left" onclick="generarUsuarios()"></i></div>
-         <div>aunClick-CATEGORIAS</div>
-         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
+         <div>aunClick-Categorias</div>
+         <div><i class="fa-solid fa-bars" onclick="menu(${a})" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
     JSON.parse(localStorage.getItem('categorias')).forEach(function(rubro){
         document.getElementById('categoria').innerHTML +=
-           `<button class="btn col-6" id="botonSelect" onclick="generarRestaurantes(${a}, ${rubro.id})">
+           `<button class="btn col-6" id="botonSelect" onclick="generarAsociados(${a}, ${rubro.id})">
                 <img src="${rubro.icono}" style="border-radius: 15%; width:140px; height:115px;">
                 <div id="rubro">${rubro.nombre}
                 </div>
@@ -1056,13 +1072,13 @@ function generarCategorias(a) {
        }); 
 }
 
-function generarRestaurantes(a,b) {
+function generarAsociados(a,b) {
     console.log('b', b);
     document.getElementById('categoria').innerHTML=null;
     document.getElementById('titulo2').innerHTML = 
         `<div><i class="fa-solid fa-angle-left" onclick="generarCategorias(${a})"></i></div>
-         <div>aunClick-RESTAURANTES</div>
-         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
+         <div>aunClick-Asociados</div>
+         <div><i class="fa-solid fa-bars" onclick="menu(${a})" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
     JSON.parse(localStorage.getItem('categorias'))[b-1].socios.forEach(function(ques){
         
             document.getElementById('categoria').innerHTML +=
@@ -1078,9 +1094,9 @@ function generarProductos(a,b,c) {
     document.getElementById('categoria').innerHTML=null;
     //document.getElementById('personas').id='categoria';
     document.getElementById('titulo2').innerHTML = 
-        `<div><i class="fa-solid fa-angle-left" onclick="generarRestaurantes(${a},${b})"></i></div>
-         <div>aunClick-PROD/SERV</div>
-         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
+        `<div><i class="fa-solid fa-angle-left" onclick="generarAsociados(${a},${b})"></i></div>
+         <div>aunClick-Prod/Serv</div>
+         <div><i class="fa-solid fa-bars" onclick="menu(${a})" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
     JSON.parse(localStorage.getItem('categorias'))[b-1].socios[c-1].productos.forEach(function(pro){
         
             document.getElementById('categoria').innerHTML +=
@@ -1097,8 +1113,8 @@ function compraProducto(a,b,c,d) {
     document.getElementById('categoria').innerHTML=null;
     document.getElementById('titulo2').innerHTML = 
         `<div><i class="fa-solid fa-angle-left" onclick="generarProductos(${a},${b},${c})"></i></div>
-         <div>aunClick-COMPRA</div>
-         <div><i class="fa-solid fa-bars" onclick="menu()" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
+         <div>aunClick-Compra</div>
+         <div><i class="fa-solid fa-bars" onclick="menu(${a})" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
     document.getElementById('categoria').innerHTML =
         `<div id="compra"><img src="assets/img/productos/bigos/bigos.jpg" style="border-radius: 15%; width:350px;">
             <br><br><br>
@@ -1114,7 +1130,7 @@ function compraProducto(a,b,c,d) {
                 <div onclick="cantidad(1)"><i class="fa-solid fa-circle-plus"></i></div>
                 
             </div>
-            <div id="titulo3">AGREGAR A ORDEN</div>
+            <div id="titulo3" onclick="ordenPendiente(${a},${b},${c},${d});" data-bs-toggle="modal" data-bs-target="#agregado">AGREGAR A ORDEN</div>
         </div>`;
 }
 
@@ -1128,14 +1144,12 @@ function registrarse() {
     document.getElementById('facetas').innerHTML =
         `<div class="container">
             <div id="registro">
-            
                     <input class="form-control" type="text" id="name" placeholder="Nombre de Usuario">
                     <input class="form-control" type="number" id="image" placeholder="Imagen perfil" min="1" max="2">
                     <input class="form-control" type="text" id="email" placeholder="Correo Electrónico">
                     <input class="form-control" type="password" id="password" placeholder="Contraseña">
                     <input class="form-control" type="text" id="address" placeholder="Dirección">
-                    <input class="form-control" type="number" id="cell" placeholder="Número Celular" min="8" max="8">                   
-
+                    <input class="form-control" type="number" id="cell" placeholder="Número Celular" min="8" max="8">
             </div>
          </div>
         <div id="login-signup">
@@ -1143,9 +1157,7 @@ function registrarse() {
                 SIGN UP
             </button>
             <hr>
-        </div>`;
-
-        
+        </div>`;     
 }
 
 function guardar() {
@@ -1160,16 +1172,12 @@ function guardar() {
         numero: document.getElementById('cell').value,
         pedidos: [],
     };
-
     console.log(user);
     usuarios.push(user);
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
     console.log(usuarios);
-
     generarUsuarios();
 }
-
-
 
 function cantidad(valor) {
     if (valor==1) {
@@ -1182,7 +1190,108 @@ function cantidad(valor) {
     document.getElementById('num').innerHTML = `${unit}`;
 }
 
-function ordenPendiente(params) {
-      
+function ordenPendiente(a,b,c,d) {
+  const preliminar = {
+        id: a,
+        categoria: b,
+        socios: c,
+        productos: d,
+        unidades: unit,
+    }     
+    console.log(preliminar);
+    pedidosPendientes.push(preliminar);
+    console.log(pedidosPendientes);
+}
+
+/*function pedidoAgregado(){
+    document.getElementsByClassName("fa-solid fa-angle-left")[0].innerHTML=
+    `<!-- Modal -->
+    <div class="modal fade" id="agregado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    PEDIDO AGREGADO
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
+                </div>
+            </div>
+        </div>
+    </div>`
+}*/
+
+function perfil(a) {
+    console.log('a', a);
+    document.getElementsByClassName('origen1')[0].id='personas'
+    document.getElementById('personas').innerHTML=null;
+    document.getElementsByClassName('origen0')[0].id='titulo2'
+    document.getElementById('titulo2').innerHTML = 
+        `<div><i class="fa-solid fa-angle-left" onclick="generarCategorias(${a})"></i></div>
+        <div>aunClick-Perfil</div>
+        <div><i class="fa-solid fa-bars" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="menu()"></i></div>`
+    let personaje = JSON.parse(localStorage.getItem('usuarios'))[a-1];
+        document.getElementById('personas').innerHTML =
+            `<button class="btn" style="border-radius: 15%; padding-top:100px; padding-bottom:70px;">
+                <img src="${personaje.imagenPerfil}" id="otraFoto" style="border-radius: 15%; width:200px">
+            </button>
+            <div id="rubro">
+                <div>id: ${personaje.id}</div>
+                <div>nombre: ${personaje.nombre}</div>
+                <div>correo: ${personaje.correo}</div>
+                <div>dirección: ${personaje.direccion}</div>
+                <div>número Cel.: ${personaje.numero}</div>
+                <div id="login-signup">
+                    <button id="login" onclick="editar(${a})">
+                        Editar
+                    </button>
+                    <hr>
+                </div>
+            </div>`; 
+}
+
+
+function editar(a) {
+    document.getElementsByClassName('origen0')[0].id='titulo2'
+        document.getElementById('titulo2').innerHTML = 
+            `<div><i class="fa-solid fa-angle-left" onclick="perfil(${a})"></i></div>
+            <div>aunClick-Perfil</div>
+            <div><i class="fa-solid fa-bars" onclick="menu(${a})" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`
+    document.getElementById('personas').innerHTML =
+        `<div class="container">
+            <div id="registro">
+                    <input class="form-control" type="text" id="name" placeholder="Nombre de Usuario">
+                    <input class="form-control" type="number" id="image" placeholder="Imagen perfil" min="1" max="2">
+                    <input class="form-control" type="text" id="email" placeholder="Correo Electrónico">
+                    <input class="form-control" type="password" id="password" placeholder="Contraseña">
+                    <input class="form-control" type="text" id="address" placeholder="Dirección">
+                    <input class="form-control" type="number" id="cell" placeholder="Número Celular" min="8" max="8">
+            </div>
+         </div>
+        <div id="login-signup">
+            <button id="login" onclick="guardar()">
+                GUARDAR
+            </button>
+            <hr>
+        </div>`;
+    
+}
+
+/*function actualizar() {
+    nombre:  localStorage.setItem('usuarios', JSON.stringify(usuarios))document.getElementById('name').value;
+    imagenPerfil: `assets/img/profile-pics/${document.getElementById('image').value}.jpg`;
+    correo: document.getElementById('email').value;
+    contraseña:document.getElementById('password').value;
+    direccion: document.getElementById('address').value;
+    numero: document.getElementById('cell').value;
+    
+}*/
+
+function carrito(a) {
+
+
     
 }
