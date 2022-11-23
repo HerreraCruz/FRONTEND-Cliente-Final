@@ -160,3 +160,15 @@ body {
    color: #4C33E7;
    background-color: #dfd92c;
 }
+
+#perfil {
+   color: #4C33E7;
+   font-size: 1.5rem;
+   display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: stretch;
+	align-content: center;
+
+}

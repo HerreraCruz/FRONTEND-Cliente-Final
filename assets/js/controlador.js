@@ -963,6 +963,7 @@ console.log('ver',categorias[0].socios);
 console.log('ver',categorias.length);
 console.log('ver',usuarios.length);
 var unit;
+var x;
 
 
 var localstorage = window.localStorage;
@@ -978,6 +979,8 @@ console.log('a', JSON.parse(localstorage.getItem('categorias'))[0].socios);
 console.log('b', JSON.parse(localstorage.getItem('categorias'))[0].socios[0].id);
 
 console.log('c', JSON.parse(localstorage.getItem('usuarios')).length);
+
+console.log('ids', JSON.parse(localstorage.getItem('usuarios'))[0].id);
 
 function login() {
     if (document.getElementsByClassName('origen0')[0].id!='titulo') {
@@ -1000,6 +1003,7 @@ function login() {
 
 
 function generarUsuarios() {
+    x=0;
         document.getElementsByClassName('origen1')[0].id='personas'
         document.getElementById('personas').innerHTML=null;
         document.getElementsByClassName('origen0')[0].id='titulo2'
@@ -1022,36 +1026,18 @@ function generarUsuarios() {
 
 function menu(a) {
     console.log('a', a);
+    
     if (unit==null) { unit=0;};
     document.getElementsByClassName("modal-body")[0].innerHTML=
     `<div onclick="perfil(${a})" data-bs-dismiss="modal"><i class="fa-regular fa-circle-user"></i> PERFIL</div>
-            <div><i class="fa-solid fa-cart-shopping"></i> CARRITO (${  unit})</div>
+            <div><i class="fa-solid fa-cart-shopping"></i> CARRITO (${x})</div>
             <div><i class="fa-regular fa-comment-dots"></i> MENSAJES</div>
             <div><i class="fa-regular fa-bell"></i> NOTIFICACIONES</div>
-            <div onclick="login()" data-bs-dismiss="modal"><i class="fa-solid fa-right-from-bracket"></i> SALIR</div>`}
-    /*document.getElementsByClassName("fa-solid fa-angle-left")[0].innerHTML=
-    `<div data-bs-toggle="modal" data-bs-target="#exampleModal"></div><!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">MENU</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div onclick="perfil(${a})" data-bs-dismiss="modal"><i class="fa-regular fa-circle-user"></i> PERFIL</div>
-            <div><i class="fa-solid fa-cart-shopping"></i> CARRITO (${  unit})</div>
-            <div><i class="fa-regular fa-comment-dots"></i> MENSAJES</div>
-            <div><i class="fa-regular fa-bell"></i> NOTIFICACIONES</div>
-            <div onclick="login()" data-bs-dismiss="modal"><i class="fa-solid fa-right-from-bracket"></i> SALIR</div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
-        </div>
-        </div>
-    </div>
-    </div>`;
-}*/
+            <div onclick="login()" data-bs-dismiss="modal"><i class="fa-solid fa-right-from-bracket"></i> SALIR</div>`;
+    
+    
+}
+    
 
 function generarCategorias(a) {
     console.log('a', a);
@@ -1130,7 +1116,7 @@ function compraProducto(a,b,c,d) {
                 <div onclick="cantidad(1)"><i class="fa-solid fa-circle-plus"></i></div>
                 
             </div>
-            <div id="titulo3" onclick="ordenPendiente(${a},${b},${c},${d});" data-bs-toggle="modal" data-bs-target="#agregado">AGREGAR A ORDEN</div>
+            <div id="titulo3" onclick="ordenPendiente(${a},${b},${c},${d}); unidadesTotales(${a})" data-bs-toggle="modal" data-bs-target="#agregado">AGREGAR A ORDEN</div>
         </div>`;
 }
 
@@ -1179,6 +1165,32 @@ function guardar() {
     generarUsuarios();
 }
 
+function guardarE(a) {
+    const user =  {
+                
+        id: JSON.parse(localstorage.getItem('usuarios'))[a-1].id,
+        nombre: document.getElementById('nameE').value,
+        imagenPerfil: `assets/img/profile-pics/${document.getElementById('imageE').value}.jpg`,
+        correo: document.getElementById('emailE').value,
+        contraseña: JSON.parse(localstorage.getItem('usuarios'))[a-1].contraseña,
+        direccion: document.getElementById('addressE').value,
+        numero: document.getElementById('cellE').value,
+        pedidos: JSON.parse(localstorage.getItem('usuarios'))[a-1].pedidos,
+    };
+
+    for (let i = 0; i < JSON.parse(localstorage.getItem('usuarios')).length; i++) {
+        if (JSON.stringify(localstorage.getItem('usuarios'))[i]==JSON.stringify(user)) {
+            JSON.stringify(localstorage.getItem('usuarios'))[i]=JSON.stringify(user)
+        }
+        
+    }
+    console.log(user);
+    usuarios.push(user);
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    console.log(usuarios);
+    generarUsuarios();
+}
+
 function cantidad(valor) {
     if (valor==1) {
         unit++
@@ -1203,29 +1215,9 @@ function ordenPendiente(a,b,c,d) {
     console.log(pedidosPendientes);
 }
 
-/*function pedidoAgregado(){
-    document.getElementsByClassName("fa-solid fa-angle-left")[0].innerHTML=
-    `<!-- Modal -->
-    <div class="modal fade" id="agregado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    PEDIDO AGREGADO
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
-                </div>
-            </div>
-        </div>
-    </div>`
-}*/
-
 function perfil(a) {
-    console.log('a', a);
+    if (a!=null) {
+        console.log('a', a);
     document.getElementsByClassName('origen1')[0].id='personas'
     document.getElementById('personas').innerHTML=null;
     document.getElementsByClassName('origen0')[0].id='titulo2'
@@ -1238,7 +1230,7 @@ function perfil(a) {
             `<button class="btn" style="border-radius: 15%; padding-top:100px; padding-bottom:70px;">
                 <img src="${personaje.imagenPerfil}" id="otraFoto" style="border-radius: 15%; width:200px">
             </button>
-            <div id="rubro">
+            <div id="perfil">
                 <div>id: ${personaje.id}</div>
                 <div>nombre: ${personaje.nombre}</div>
                 <div>correo: ${personaje.correo}</div>
@@ -1251,6 +1243,9 @@ function perfil(a) {
                     <hr>
                 </div>
             </div>`; 
+        
+    }
+    
 }
 
 
@@ -1263,16 +1258,15 @@ function editar(a) {
     document.getElementById('personas').innerHTML =
         `<div class="container">
             <div id="registro">
-                    <input class="form-control" type="text" id="name" placeholder="Nombre de Usuario">
-                    <input class="form-control" type="number" id="image" placeholder="Imagen perfil" min="1" max="2">
-                    <input class="form-control" type="text" id="email" placeholder="Correo Electrónico">
-                    <input class="form-control" type="password" id="password" placeholder="Contraseña">
-                    <input class="form-control" type="text" id="address" placeholder="Dirección">
-                    <input class="form-control" type="number" id="cell" placeholder="Número Celular" min="8" max="8">
+                    <input class="form-control" type="text" id="nameE" placeholder="Nombre de Usuario">
+                    <input class="form-control" type="number" id="imageE" placeholder="Imagen perfil" min="1" max="2">
+                    <input class="form-control" type="text" id="emailE" placeholder="Correo Electrónico">
+                    <input class="form-control" type="text" id="addressE" placeholder="Dirección">
+                    <input class="form-control" type="number" id="cellE" placeholder="Número Celular" min="8" max="8">
             </div>
          </div>
         <div id="login-signup">
-            <button id="login" onclick="guardar()">
+            <button id="login" onclick="guardarE(${a})">
                 GUARDAR
             </button>
             <hr>
@@ -1280,18 +1274,25 @@ function editar(a) {
     
 }
 
-/*function actualizar() {
-    nombre:  localStorage.setItem('usuarios', JSON.stringify(usuarios))document.getElementById('name').value;
-    imagenPerfil: `assets/img/profile-pics/${document.getElementById('image').value}.jpg`;
-    correo: document.getElementById('email').value;
-    contraseña:document.getElementById('password').value;
-    direccion: document.getElementById('address').value;
-    numero: document.getElementById('cell').value;
-    
-}*/
-
 function carrito(a) {
 
 
     
+}
+
+function unidadesTotales(a) {
+    x=0;
+    for (let i = 0; i < pedidosPendientes.length; i++) {
+        console.log('id', pedidosPendientes[i].id);
+        if (pedidosPendientes[i].id==a) {
+            x+=pedidosPendientes[i].unidades;
+            console.log('x', x);
+        
+        }    
+    }
+    
+    console.log('pedidos', pedidosPendientes.length);
+    console.log('a', a);
+    console.log('x', x);
+    return x;
 }
