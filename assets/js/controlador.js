@@ -9,18 +9,21 @@ var usuarios = [
         numero: 99887766,
         pedidos: [
             {
+                status: 0,
                 category: 1,
                 socios: 4,
                 productos: 1,
                 unidades: 1,
             },
             {
+                status: 0,
                 category: 2,
                 socios: 5,
                 productos: 0,
                 unidades: 2,
             },
             {
+                status: 0,
                 category: 3,
                 socios: 5,
                 productos: 0,
@@ -38,18 +41,21 @@ var usuarios = [
         numero: 99887766,
         pedidos: [
             {
+                status: 0,
                 category: 1,
                 socios: 4,
                 productos: 1,
                 unidades: false,
             },
             {
+                status: 0,
                 category: 2,
                 socios: 5,
                 productos: 0,
                 unidades: true,
             },
             {
+                status: 0,
                 category: 3,
                 socios: 5,
                 productos: 0,
@@ -67,18 +73,21 @@ var usuarios = [
         numero: 99887766,
         pedidos: [
             {
+                status: 0,
                 category: 1,
                 socios: 4,
                 productos: 1,
                 unidades: false,
             },
             {
+                status: 0,
                 category: 2,
                 socios: 5,
                 productos: 0,
                 unidades: true,
             },
             {
+                status: 0,
                 category: 3,
                 socios: 5,
                 productos: 0,
@@ -96,18 +105,21 @@ var usuarios = [
         numero: 99887766,
         pedidos: [
             {
+                status: 0,
                 category: 1,
                 socios: 4,
                 productos: 1,
                 unidades: false,
             },
             {
+                status: 0,
                 category: 2,
                 socios: 5,
                 productos: 0,
                 unidades: true,
             },
             {
+                status: 0,
                 category: 3,
                 socios: 5,
                 productos: 0,
@@ -127,7 +139,9 @@ var categorias = [
             {
             id: 1,
             palabra: "BIGOS",
+            banner: "assets/img/productos/banner/bigos.jpg",
             logo: "assets/img/restaurantes/R1.jpg",
+            direccion: "Mall Multiplaza",
             productos: [
                 {
                     id: 1,
@@ -166,20 +180,40 @@ var categorias = [
             {
                 id: 2,
                 palabra: "BURGER KING",
+                banner: "assets/img/productos/banner/bk.png",
                 logo: "assets/img/restaurantes/R2.png",
+                direccion: "Mall Las Cascadas",
                 productos: [
                     {
-                        palabra: "Family",
-                        correcta: true,
+                        id: 1,
+                        nombre: "PHILLY CHEESE",
+                        precio: 139,
+                        imagen: 'assets/img/productos/bk/BK1.png',
                     },{
-                        palabra: "Mother",
-                        correcta: false,
+                        id: 2,
+                        nombre: "PHILLY CHEESE DOBLE",
+                        precio: 78,
+                        imagen: 'assets/img/productos/bk/BK2.png',
                     },{
-                        palabra: "water",
-                        correcta: false,
+                        id: 3,
+                        nombre: "VEGGIE WHOPPER",
+                        precio: 184,
+                        imagen: 'assets/img/productos/bk/BK3.png',
                     },{
-                        palabra: "Java",
-                        correcta: false,
+                        id: 4,
+                        nombre: "RODEO BBQ",
+                        precio: 109,
+                        imagen: 'assets/img/productos/bk/BK4.jpg',
+                    },{
+                        id: 5,
+                        nombre: "WHOPPER",
+                        precio: 128,
+                        imagen: 'assets/img/productos/bk/BK5.png',
+                    },{
+                        id: 6,
+                        nombre: "WHOPPER DOBLE",
+                        precio: 199,
+                        imagen: 'assets/img/productos/bk/BK6.png',
                     }
                 ]
         
@@ -187,7 +221,9 @@ var categorias = [
             {
                 id: 3,
                 palabra: "POLLO CAMPERO",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R3.png",
+                direccion: "Plaza Miraflores",
                 productos: [
                     {
                         palabra: "Family",
@@ -208,7 +244,9 @@ var categorias = [
             {
                 id: 4,
                 palabra: "FURIWA",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R4.png",
+                direccion: "Mall La Galeria",
                 productos: [
                     {
                         palabra: "Family",
@@ -229,7 +267,9 @@ var categorias = [
             {
                 id: 5,
                 palabra: "PIZZA HUT",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R5.jfif",
+                direccion: "City Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -250,7 +290,9 @@ var categorias = [
             {
                 id: 6,
                 palabra: "DENNY'S",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R6.png",
+                direccion: "Mall Premier",
                 productos: [
                     {
                         palabra: "Family",
@@ -271,7 +313,9 @@ var categorias = [
             {
                 id: 7,
                 palabra: "EL PATIO",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R7.jfif",
+                direccion: "Metrópolis",
                 productos: [
                     {
                         palabra: "Family",
@@ -292,7 +336,9 @@ var categorias = [
             {
                 id: 8,
                 palabra: "PUPUSAS MIRAFLORES",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R8.jpg",
+                direccion: "Midence Soto",
                 productos: [
                     {
                         palabra: "Family",
@@ -313,7 +359,9 @@ var categorias = [
             {
                 id: 9,
                 palabra: "ALITAS KENNEDY",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R9.png",
+                direccion: "Plaza Los Castaños",
                 productos: [
                     {
                         palabra: "Family",
@@ -343,7 +391,9 @@ var categorias = [
             {
                 id: 1,
                 palabra: "ITSMANIA",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/B1.png",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -364,7 +414,9 @@ var categorias = [
             {
                 id: 3,
                 palabra: "GALEANO",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/B2.jfif",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -385,7 +437,9 @@ var categorias = [
             {
                 id: 3,
                 palabra: "CIRCLE K",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/B3.png",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -406,7 +460,9 @@ var categorias = [
             {
                 id: 3,
                 palabra: "CASA DEL RON",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/B4.jpg",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -436,7 +492,9 @@ var categorias = [
             {
             id: 1,
             palabra: "Hermana",
+            banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
+            direccion: "Mall",
             productos: [
                 {
                     palabra: "Brother",
@@ -457,7 +515,9 @@ var categorias = [
             {
                 id: 2,
                 palabra: "Familia",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -487,7 +547,9 @@ var categorias = [
             {
             id: 1,
             palabra: "Hermana",
+            banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
+            direccion: "Mall",
             productos: [
                 {
                     palabra: "Brother",
@@ -508,7 +570,9 @@ var categorias = [
             {
                 id: 2,
                 palabra: "Familia",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -538,7 +602,9 @@ var categorias = [
             {
             id: 1,
             palabra: "Hermana",
+            banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
+            direccion: "Mall",
             productos: [
                 {
                     palabra: "Brother",
@@ -559,7 +625,9 @@ var categorias = [
             {
                 id: 2,
                 palabra: "Familia",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -589,7 +657,9 @@ var categorias = [
             {
             id: 1,
             palabra: "Hermana",
+            banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
+            direccion: "Mall",
             productos: [
                 {
                     palabra: "Brother",
@@ -610,7 +680,9 @@ var categorias = [
             {
                 id: 2,
                 palabra: "Familia",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -640,7 +712,9 @@ var categorias = [
             {
             id: 1,
             palabra: "Hermana",
+            banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
+            direccion: "Mall",
             productos: [
                 {
                     palabra: "Brother",
@@ -661,7 +735,9 @@ var categorias = [
             {
                 id: 2,
                 palabra: "Familia",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -691,7 +767,9 @@ var categorias = [
             {
             id: 1,
             palabra: "Hermana",
+            banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
+            direccion: "Mall",
             productos: [
                 {
                     palabra: "Brother",
@@ -712,7 +790,9 @@ var categorias = [
             {
                 id: 2,
                 palabra: "Familia",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -742,7 +822,9 @@ var categorias = [
             {
             id: 1,
             palabra: "Hermana",
+            banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
+            direccion: "Mall",
             productos: [
                 {
                     palabra: "Brother",
@@ -763,7 +845,9 @@ var categorias = [
             {
                 id: 2,
                 palabra: "Familia",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -793,7 +877,9 @@ var categorias = [
             {
             id: 1,
             palabra: "Hermana",
+            banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
+            direccion: "Mall",
             productos: [
                 {
                     palabra: "Brother",
@@ -814,7 +900,9 @@ var categorias = [
             {
                 id: 2,
                 palabra: "Familia",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -844,7 +932,9 @@ var categorias = [
             {
             id: 1,
             palabra: "Hermana",
+            banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
+            direccion: "Mall",
             productos: [
                 {
                     palabra: "Brother",
@@ -865,7 +955,9 @@ var categorias = [
             {
                 id: 2,
                 palabra: "Familia",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -895,7 +987,9 @@ var categorias = [
             {
             id: 1,
             palabra: "Hermana",
+            banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
+            direccion: "Mall",
             productos: [
                 {
                     palabra: "Brother",
@@ -916,7 +1010,9 @@ var categorias = [
             {
                 id: 2,
                 palabra: "Familia",
+                banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
+                direccion: "Mall",
                 productos: [
                     {
                         palabra: "Family",
@@ -1096,7 +1192,7 @@ function compraProducto(a,b,c,d) {
          <div>aunClick-Compra</div>
          <div><i class="fa-solid fa-bars" onclick="menu(${a})" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
     document.getElementById('categoria').innerHTML =
-        `<div id="compra"><img src="assets/img/productos/bigos/bigos.jpg" style="border-radius: 15%; width:350px;">
+        `<div id="compra"><img src="${JSON.parse(localStorage.getItem('categorias'))[b-1].socios[c-1].banner}" style="border-radius: 15%; width:350px;">
             <br><br><br>
             <button class="btn col-6" id="botonSelect">
                     <img src="${JSON.parse(localStorage.getItem('categorias'))[b-1].socios[c-1].productos[d-1].imagen}" style="border-radius: 15%; width:150px; height:150px;">
@@ -1296,9 +1392,9 @@ function carrito(a) {
             }
         }
         document.getElementById('categoria').innerHTML +=
-        `<div id="carrito" style="font-size:1.5rem;">DELIVERY = L49.00</div>
+        `<div id="carrito" style="font-size:1.5rem;">DELIVERY = L69.00</div>
         <br><br>
-        <div id="carrito" style="font-size:2rem;">GRAN TOTAL = L${tot+49}.00</div>
+        <div id="carrito" style="font-size:2rem;">GRAN TOTAL = L${tot+69}.00</div>
         <div id="login-signup">
         <button id="login" onclick="tarjeta(${a})">
             COMPRAR
