@@ -12,19 +12,19 @@ var usuarios = [
                 category: 1,
                 socios: 4,
                 productos: 1,
-                unidades: false,
+                unidades: 1,
             },
             {
                 category: 2,
                 socios: 5,
                 productos: 0,
-                unidades: true,
+                unidades: 2,
             },
             {
                 category: 3,
                 socios: 5,
                 productos: 0,
-                unidades: true,
+                unidades: 4,
             }
         ]
     },
@@ -945,16 +945,10 @@ var pedidosPendientes =[
     categoria: 0,
     socios: 0,
     productos: 0,
-    unidades: 5,
+    unidades: 0,
     },
-    {
-    id: 0,
-    categoria: 0,
-    socios: 0,
-    productos: 0,
-    unidades: 2,
-    }
 ]
+
 
 
 //console.log('Usuarios', usuarios);
@@ -1030,10 +1024,10 @@ function menu(a) {
     if (unit==null) { unit=0;};
     document.getElementsByClassName("modal-body")[0].innerHTML=
     `<div onclick="perfil(${a})" data-bs-dismiss="modal"><i class="fa-regular fa-circle-user"></i> PERFIL</div>
-            <div><i class="fa-solid fa-cart-shopping"></i> CARRITO (${x})</div>
-            <div><i class="fa-regular fa-comment-dots"></i> MENSAJES</div>
-            <div><i class="fa-regular fa-bell"></i> NOTIFICACIONES</div>
-            <div onclick="login()" data-bs-dismiss="modal"><i class="fa-solid fa-right-from-bracket"></i> SALIR</div>`;
+    <div onclick="carrito(${a})" data-bs-dismiss="modal"><i class="fa-solid fa-cart-shopping"></i> CARRITO (${unidadesTotales(a)})</div>
+    <div><i class="fa-regular fa-comment-dots"></i> MENSAJES</div>
+    <div><i class="fa-regular fa-bell"></i> NOTIFICACIONES</div>
+    <div onclick="login()" data-bs-dismiss="modal"><i class="fa-solid fa-right-from-bracket"></i> SALIR</div>`;
     
     
 }
@@ -1116,7 +1110,7 @@ function compraProducto(a,b,c,d) {
                 <div onclick="cantidad(1)"><i class="fa-solid fa-circle-plus"></i></div>
                 
             </div>
-            <div id="titulo3" onclick="ordenPendiente(${a},${b},${c},${d}); unidadesTotales(${a})" data-bs-toggle="modal" data-bs-target="#agregado">AGREGAR A ORDEN</div>
+            <div id="titulo3" onclick="ordenPendiente(${a},${b-1},${c-1},${d-1}); unidadesTotales(${a})" data-bs-toggle="modal" data-bs-target="#agregado">AGREGAR A ORDEN</div>
         </div>`;
 }
 
@@ -1135,7 +1129,7 @@ function registrarse() {
                     <input class="form-control" type="text" id="email" placeholder="Correo Electrónico">
                     <input class="form-control" type="password" id="password" placeholder="Contraseña">
                     <input class="form-control" type="text" id="address" placeholder="Dirección">
-                    <input class="form-control" type="number" id="cell" placeholder="Número Celular" min="8" max="8">
+                    <input class="form-control" type="number" id="cell" placeholder="Número Celular">
             </div>
          </div>
         <div id="login-signup">
@@ -1212,7 +1206,8 @@ function ordenPendiente(a,b,c,d) {
     }     
     console.log(preliminar);
     pedidosPendientes.push(preliminar);
-    console.log(pedidosPendientes);
+    console.log('pp', pedidosPendientes);
+    //localstorage.setItem('pp', JSON.stringify(pedidosPendientes));
 }
 
 function perfil(a) {
@@ -1275,8 +1270,48 @@ function editar(a) {
 }
 
 function carrito(a) {
+    if (a!=null) {
+        console.log('carritoA',a);
+        let tot=0;
+        let pendiente = JSON.parse(localstorage.getItem('categorias'));
+        document.getElementsByClassName('origen1')[0].id='categoria'
+        document.getElementById('categoria').innerHTML=null;
+        document.getElementById('titulo2').innerHTML = 
+            `<div><i class="fa-solid fa-angle-left" onclick="generarCategorias(${a})"></i></div>
+            <div>aunClick-Carrito</div>
+            <div><i class="fa-solid fa-bars" onclick="menu(${a})" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`;
+        for (let j = 0; j < pedidosPendientes.length; j++) {
+            if (pedidosPendientes[j].id==(a)) {
+                document.getElementById('categoria').innerHTML += 
+                `<div id="carrito">
+                    <div><img src="${pendiente[pedidosPendientes[j].categoria].socios[pedidosPendientes[j].socios].productos[pedidosPendientes[j].productos].imagen}" style="width:100px"></div>
+                    <div style="width: 170px;">
+                        <div>${pendiente[pedidosPendientes[j].categoria].socios[pedidosPendientes[j].socios].productos[pedidosPendientes[j].productos].nombre}</div>
+                        <div>L${pendiente[pedidosPendientes[j].categoria].socios[pedidosPendientes[j].socios].productos[pedidosPendientes[j].productos].precio}.00 x ${pedidosPendientes[j].unidades}</div>
+                        <div>TOTAL = L${multiplicar(j)}.00</div>
+                    </div>
+                </div>
+                <br><br>`
+                tot+= multiplicar(j);
+            }
+        }
+        document.getElementById('categoria').innerHTML +=
+        `<div id="carrito" style="font-size:1.5rem;">DELIVERY = L49.00</div>
+        <br><br>
+        <div id="carrito" style="font-size:2rem;">GRAN TOTAL = L${tot+49}.00</div>
+        <div id="login-signup">
+        <button id="login" onclick="tarjeta(${a})">
+            COMPRAR
+        </button>
+        <hr>
+        </div>
+        <br><br> `
+    }
+}
 
-
+function multiplicar(e) {
+    let pendiente = JSON.parse(localstorage.getItem('categorias'));
+    return pendiente[pedidosPendientes[e].categoria].socios[pedidosPendientes[e].socios].productos[pedidosPendientes[e].productos].precio*pedidosPendientes[e].unidades;
     
 }
 
@@ -1287,7 +1322,6 @@ function unidadesTotales(a) {
         if (pedidosPendientes[i].id==a) {
             x+=pedidosPendientes[i].unidades;
             console.log('x', x);
-        
         }    
     }
     
@@ -1295,4 +1329,43 @@ function unidadesTotales(a) {
     console.log('a', a);
     console.log('x', x);
     return x;
+}
+
+function tarjeta(a) {
+    document.getElementsByClassName('origen0')[0].id='titulo2'
+        document.getElementById('titulo2').innerHTML = 
+            `<div><i class="fa-solid fa-angle-left" onclick="carrito(${a})"></i></div>
+            <div>aunClick-Compra</div>
+            <div><i class="fa-solid fa-bars" onclick="menu(${a})" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>`
+    document.getElementById('categoria').innerHTML =
+        `<div class="container">
+            <div id="registro">
+                    <input class="form-control" type="number" id="" placeholder="Número de Tarjeta">
+                    <input class="form-control" type="number" id="" placeholder="Código de Seguridad">
+                    <input class="form-control" type="text" id="" placeholder="Nombre En Tarjeta">
+                    <input class="form-control" type="date" id="" placeholder="Fecha de Caducidad">
+                    <input class="form-control" type="text" id="direc" placeholder="Dirección de Entrega">
+            </div>
+         </div>
+        <div id="login-signup">
+            <button id="login" onclick="direccion(${a}); completado(${a})" data-bs-toggle="modal" data-bs-target="#exito">
+                PAGAR
+            </button>
+            <hr>
+        </div>`;  
+}
+
+function direccion(a) {
+    document.getElementById('exitoCompra').innerHTML =
+    `PEDIDO REALIZADO <br>
+    Se Entregará en la dirección: ${document.getElementById('direc').value} `;
+}
+
+function completado(a) {
+    for (let j = 0; j < pedidosPendientes.length; j++) {
+        if (pedidosPendientes[j].id==(a)) {
+            pedidosPendientes.splice(j);
+        }
+    }
+    console.log('final', pedidosPendientes);
 }
