@@ -138,7 +138,7 @@ var categorias = [
         socios: [
             {
             id: 1,
-            palabra: "BIGOS",
+            socio: "BIGOS",
             banner: "assets/img/productos/banner/bigos.jpg",
             logo: "assets/img/restaurantes/R1.jpg",
             direccion: "Mall Multiplaza",
@@ -179,7 +179,7 @@ var categorias = [
             },
             {
                 id: 2,
-                palabra: "BURGER KING",
+                socio: "BURGER KING",
                 banner: "assets/img/productos/banner/bk.png",
                 logo: "assets/img/restaurantes/R2.png",
                 direccion: "Mall Las Cascadas",
@@ -220,22 +220,22 @@ var categorias = [
             },
             {
                 id: 3,
-                palabra: "POLLO CAMPERO",
+                socio: "POLLO CAMPERO",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R3.png",
                 direccion: "Plaza Miraflores",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -243,22 +243,22 @@ var categorias = [
             },
             {
                 id: 4,
-                palabra: "FURIWA",
+                socio: "FURIWA",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R4.png",
                 direccion: "Mall La Galeria",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -266,22 +266,22 @@ var categorias = [
             },
             {
                 id: 5,
-                palabra: "PIZZA HUT",
+                socio: "PIZZA HUT",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R5.jfif",
                 direccion: "City Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -289,22 +289,22 @@ var categorias = [
             },
             {
                 id: 6,
-                palabra: "DENNY'S",
+                socio: "DENNY'S",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R6.png",
                 direccion: "Mall Premier",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -312,22 +312,22 @@ var categorias = [
             },
             {
                 id: 7,
-                palabra: "EL PATIO",
+                socio: "EL PATIO",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R7.jfif",
                 direccion: "Metrópolis",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -335,22 +335,22 @@ var categorias = [
             },
             {
                 id: 8,
-                palabra: "PUPUSAS MIRAFLORES",
+                socio: "PUPUSAS MIRAFLORES",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R8.jpg",
                 direccion: "Midence Soto",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -358,22 +358,22 @@ var categorias = [
             },
             {
                 id: 9,
-                palabra: "ALITAS KENNEDY",
+                socio: "ALITAS KENNEDY",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/R9.png",
                 direccion: "Plaza Los Castaños",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -390,22 +390,22 @@ var categorias = [
         socios: [
             {
                 id: 1,
-                palabra: "ITSMANIA",
+                socio: "ITSMANIA",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/B1.png",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -413,22 +413,22 @@ var categorias = [
             },
             {
                 id: 3,
-                palabra: "GALEANO",
+                socio: "GALEANO",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/B2.jfif",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -436,22 +436,22 @@ var categorias = [
             },
             {
                 id: 3,
-                palabra: "CIRCLE K",
+                socio: "CIRCLE K",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/B3.png",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -459,22 +459,22 @@ var categorias = [
             },
             {
                 id: 3,
-                palabra: "CASA DEL RON",
+                socio: "CASA DEL RON",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/B4.jpg",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -491,22 +491,22 @@ var categorias = [
         socios: [
             {
             id: 1,
-            palabra: "Hermana",
+            socio: "Hermana",
             banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
             direccion: "Mall",
             productos: [
                 {
-                    palabra: "Brother",
+                    socio: "Brother",
                     correcta: false,
                 },{
-                    palabra: "Mother",
+                    socio: "Mother",
                     correcta: false,
                 },{
-                    palabra: "water",
+                    socio: "water",
                     correcta: false,
                 },{
-                    palabra: "Sister",
+                    socio: "Sister",
                     correcta: true,
                 },
             ]
@@ -514,22 +514,22 @@ var categorias = [
             },
             {
                 id: 2,
-                palabra: "Familia",
+                socio: "Familia",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -546,22 +546,22 @@ var categorias = [
         socios: [
             {
             id: 1,
-            palabra: "Hermana",
+            socio: "Hermana",
             banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
             direccion: "Mall",
             productos: [
                 {
-                    palabra: "Brother",
+                    socio: "Brother",
                     correcta: false,
                 },{
-                    palabra: "Mother",
+                    socio: "Mother",
                     correcta: false,
                 },{
-                    palabra: "water",
+                    socio: "water",
                     correcta: false,
                 },{
-                    palabra: "Sister",
+                    socio: "Sister",
                     correcta: true,
                 },
             ]
@@ -569,22 +569,22 @@ var categorias = [
             },
             {
                 id: 2,
-                palabra: "Familia",
+                socio: "Familia",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -601,22 +601,22 @@ var categorias = [
         socios: [
             {
             id: 1,
-            palabra: "Hermana",
+            socio: "Hermana",
             banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
             direccion: "Mall",
             productos: [
                 {
-                    palabra: "Brother",
+                    socio: "Brother",
                     correcta: false,
                 },{
-                    palabra: "Mother",
+                    socio: "Mother",
                     correcta: false,
                 },{
-                    palabra: "water",
+                    socio: "water",
                     correcta: false,
                 },{
-                    palabra: "Sister",
+                    socio: "Sister",
                     correcta: true,
                 },
             ]
@@ -624,22 +624,22 @@ var categorias = [
             },
             {
                 id: 2,
-                palabra: "Familia",
+                socio: "Familia",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -656,22 +656,22 @@ var categorias = [
         socios: [
             {
             id: 1,
-            palabra: "Hermana",
+            socio: "Hermana",
             banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
             direccion: "Mall",
             productos: [
                 {
-                    palabra: "Brother",
+                    socio: "Brother",
                     correcta: false,
                 },{
-                    palabra: "Mother",
+                    socio: "Mother",
                     correcta: false,
                 },{
-                    palabra: "water",
+                    socio: "water",
                     correcta: false,
                 },{
-                    palabra: "Sister",
+                    socio: "Sister",
                     correcta: true,
                 },
             ]
@@ -679,22 +679,22 @@ var categorias = [
             },
             {
                 id: 2,
-                palabra: "Familia",
+                socio: "Familia",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -711,22 +711,22 @@ var categorias = [
         socios: [
             {
             id: 1,
-            palabra: "Hermana",
+            socio: "Hermana",
             banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
             direccion: "Mall",
             productos: [
                 {
-                    palabra: "Brother",
+                    socio: "Brother",
                     correcta: false,
                 },{
-                    palabra: "Mother",
+                    socio: "Mother",
                     correcta: false,
                 },{
-                    palabra: "water",
+                    socio: "water",
                     correcta: false,
                 },{
-                    palabra: "Sister",
+                    socio: "Sister",
                     correcta: true,
                 },
             ]
@@ -734,22 +734,22 @@ var categorias = [
             },
             {
                 id: 2,
-                palabra: "Familia",
+                socio: "Familia",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -766,22 +766,22 @@ var categorias = [
         socios: [
             {
             id: 1,
-            palabra: "Hermana",
+            socio: "Hermana",
             banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
             direccion: "Mall",
             productos: [
                 {
-                    palabra: "Brother",
+                    socio: "Brother",
                     correcta: false,
                 },{
-                    palabra: "Mother",
+                    socio: "Mother",
                     correcta: false,
                 },{
-                    palabra: "water",
+                    socio: "water",
                     correcta: false,
                 },{
-                    palabra: "Sister",
+                    socio: "Sister",
                     correcta: true,
                 },
             ]
@@ -789,22 +789,22 @@ var categorias = [
             },
             {
                 id: 2,
-                palabra: "Familia",
+                socio: "Familia",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -821,22 +821,22 @@ var categorias = [
         socios: [
             {
             id: 1,
-            palabra: "Hermana",
+            socio: "Hermana",
             banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
             direccion: "Mall",
             productos: [
                 {
-                    palabra: "Brother",
+                    socio: "Brother",
                     correcta: false,
                 },{
-                    palabra: "Mother",
+                    socio: "Mother",
                     correcta: false,
                 },{
-                    palabra: "water",
+                    socio: "water",
                     correcta: false,
                 },{
-                    palabra: "Sister",
+                    socio: "Sister",
                     correcta: true,
                 },
             ]
@@ -844,22 +844,22 @@ var categorias = [
             },
             {
                 id: 2,
-                palabra: "Familia",
+                socio: "Familia",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -876,22 +876,22 @@ var categorias = [
         socios: [
             {
             id: 1,
-            palabra: "Hermana",
+            socio: "Hermana",
             banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
             direccion: "Mall",
             productos: [
                 {
-                    palabra: "Brother",
+                    socio: "Brother",
                     correcta: false,
                 },{
-                    palabra: "Mother",
+                    socio: "Mother",
                     correcta: false,
                 },{
-                    palabra: "water",
+                    socio: "water",
                     correcta: false,
                 },{
-                    palabra: "Sister",
+                    socio: "Sister",
                     correcta: true,
                 },
             ]
@@ -899,22 +899,22 @@ var categorias = [
             },
             {
                 id: 2,
-                palabra: "Familia",
+                socio: "Familia",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -931,22 +931,22 @@ var categorias = [
         socios: [
             {
             id: 1,
-            palabra: "Hermana",
+            socio: "Hermana",
             banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
             direccion: "Mall",
             productos: [
                 {
-                    palabra: "Brother",
+                    socio: "Brother",
                     correcta: false,
                 },{
-                    palabra: "Mother",
+                    socio: "Mother",
                     correcta: false,
                 },{
-                    palabra: "water",
+                    socio: "water",
                     correcta: false,
                 },{
-                    palabra: "Sister",
+                    socio: "Sister",
                     correcta: true,
                 },
             ]
@@ -954,22 +954,22 @@ var categorias = [
             },
             {
                 id: 2,
-                palabra: "Familia",
+                socio: "Familia",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -986,22 +986,22 @@ var categorias = [
         socios: [
             {
             id: 1,
-            palabra: "Hermana",
+            socio: "Hermana",
             banner: "assets/img/productos/banner/",
             logo: "assets/img/restaurantes/",
             direccion: "Mall",
             productos: [
                 {
-                    palabra: "Brother",
+                    socio: "Brother",
                     correcta: false,
                 },{
-                    palabra: "Mother",
+                    socio: "Mother",
                     correcta: false,
                 },{
-                    palabra: "water",
+                    socio: "water",
                     correcta: false,
                 },{
-                    palabra: "Sister",
+                    socio: "Sister",
                     correcta: true,
                 },
             ]
@@ -1009,22 +1009,22 @@ var categorias = [
             },
             {
                 id: 2,
-                palabra: "Familia",
+                socio: "Familia",
                 banner: "assets/img/productos/banner/",
                 logo: "assets/img/restaurantes/",
                 direccion: "Mall",
                 productos: [
                     {
-                        palabra: "Family",
+                        socio: "Family",
                         correcta: true,
                     },{
-                        palabra: "Mother",
+                        socio: "Mother",
                         correcta: false,
                     },{
-                        palabra: "water",
+                        socio: "water",
                         correcta: false,
                     },{
-                        palabra: "Java",
+                        socio: "Java",
                         correcta: false,
                     }
                 ]
@@ -1160,7 +1160,7 @@ function generarAsociados(a,b) {
             document.getElementById('categoria').innerHTML +=
             `<button class="btn col-6" id="botonSelect" onclick="generarProductos(${a}, ${b}, ${ques.id})">
                  <img src="${ques.logo}" style="border-radius: 15%; width:130px; height:130px;">
-                 <div id="rubro">${ques.palabra}
+                 <div id="rubro">${ques.socio}
                  </div>
              </button>`;
        }); 
